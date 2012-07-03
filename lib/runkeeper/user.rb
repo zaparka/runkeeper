@@ -32,6 +32,10 @@ class Runkeeper
       connection.past_activities
     end
 
+    def past_activity(uri)
+      connection.past_activity()
+    end
+
     def new_activity(attrs={})
       Activity.new(connection, attrs)
     end

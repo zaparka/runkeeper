@@ -39,6 +39,10 @@ class Runkeeper
       self.class.get(user_response['fitness_activities'], :headers => headers(:past_activities))
     end
 
+    def past_activity(uri)
+      self.class.get(uri, :headers => headers(:past_activities))
+    end
+
     def records
       self.class.get(user_response['records'], :headers => headers(:records))
     end
