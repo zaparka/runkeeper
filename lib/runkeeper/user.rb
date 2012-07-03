@@ -33,7 +33,7 @@ class Runkeeper
     end
 
     def past_activity(uri)
-      connection.past_activity()
+      connection.past_activity(uri)
     end
 
     def new_activity(attrs={})
