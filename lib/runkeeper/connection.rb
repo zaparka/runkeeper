@@ -12,7 +12,8 @@ class Runkeeper
       :past_activities => "application/vnd.com.runkeeper.FitnessActivity+json",
       :records => "application/vnd.com.runkeeper.Records+json",
       :profile => "application/vnd.com.runkeeper.Profile+json",
-      :new_activity => "application/vnd.com.runkeeper.NewFitnessActivity+json"
+      :new_activity => "application/vnd.com.runkeeper.NewFitnessActivity+json",
+      :settings => "application/vnd.com.runkeeper.Settings+json"
     }
 
     attr_reader :token, :user_response
@@ -45,6 +46,10 @@ class Runkeeper
 
     def records
       self.class.get(user_response['records'], :headers => headers(:records))
+    end
+
+    def settings
+      self.class.get(user_response['settings'], :headers => headers(:settings))
     end
 
     def save_activity(hash)
